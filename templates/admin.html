@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Admin Dashboard</h1>
+
+<nav>
+
+<a href="/">Home</a>
+
+<a href="/dashboard">Dashboard</a>
+
+<a href="/bookings">Bookings</a>
+
+<a href="/profile">Profile</a>
+
+<a href="/logout">Logout</a>
+
+</nav>
+
+</header>
+
+<section class="dashboard">
+
+<h2>Administrator Panel</h2>
+
+<div class="admin-container">
+
+<div class="card">
+
+<h3>Total Users</h3>
+
+<h1>{{ total_users }}</h1>
+
+</div>
+
+<div class="card">
+
+<h3>Total Bookings</h3>
+
+<h1>{{ total_bookings }}</h1>
+
+</div>
+
+<div class="card">
+
+<h3>Total Revenue</h3>
+
+<h1>₹ {{ total_revenue }}</h1>
+
+</div>
+
+</div>
+
+<h2 class="title">
+
+Recent Bookings
+
+</h2>
+
+<table>
+
+<tr>
+
+<th>Booking ID</th>
+
+<th>Name</th>
+
+<th>Vehicle</th>
+
+<th>Amount</th>
+
+<th>Payment</th>
+
+<th>Status</th>
+
+</tr>
+
+{% for booking in recent_bookings %}
+
+<tr>
+
+<td>{{ booking.booking_id }}</td>
+
+<td>{{ booking.fullname }}</td>
+
+<td>{{ booking.vehicle }}</td>
+
+<td>₹ {{ booking.amount }}</td>
+
+<td>{{ booking.payment_status }}</td>
+
+<td>{{ booking.status }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+<div style="text-align:center;">
+
+<a href="/bookings" class="btn">
+
+Manage Bookings
+
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 Vehicle Rental Booking System
+
+</p>
+
+</footer>
+
+</body>
+
+</html>

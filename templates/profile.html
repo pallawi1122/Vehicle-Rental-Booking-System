@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>User Profile</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Vehicle Rental System</h1>
+
+<nav>
+
+<a href="/">Home</a>
+
+<a href="/dashboard">Dashboard</a>
+
+<a href="/bookings">Bookings</a>
+
+<a href="/logout">Logout</a>
+
+</nav>
+
+</header>
+
+<section class="profile-box">
+
+<h2>My Profile</h2>
+
+<table>
+
+<tr>
+
+<th>Full Name</th>
+
+<td>{{ user.fullname }}</td>
+
+</tr>
+
+<tr>
+
+<th>Email</th>
+
+<td>{{ user.email }}</td>
+
+</tr>
+
+<tr>
+
+<th>Phone</th>
+
+<td>
+
+{% if user.phone %}
+
+{{ user.phone }}
+
+{% else %}
+
+Not Available
+
+{% endif %}
+
+</td>
+
+</tr>
+
+<tr>
+
+<th>Role</th>
+
+<td>{{ user.role }}</td>
+
+</tr>
+
+</table>
+
+<br>
+
+<div style="text-align:center;">
+
+<a href="/dashboard" class="btn">
+
+Dashboard
+
+</a>
+
+&nbsp;
+
+<a href="/bookings" class="btn">
+
+My Bookings
+
+</a>
+
+&nbsp;
+
+<a href="/" class="btn">
+
+Home
+
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 Vehicle Rental Booking System
+
+</p>
+
+</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Booking Receipt</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Vehicle Rental Booking System</h1>
+
+</header>
+
+<section class="receipt-box">
+
+<h2>Booking Receipt</h2>
+
+<table>
+
+<tr>
+
+<th>Booking ID</th>
+
+<td>{{ receipt.booking_id }}</td>
+
+</tr>
+
+<tr>
+
+<th>Customer Name</th>
+
+<td>{{ receipt.fullname }}</td>
+
+</tr>
+
+<tr>
+
+<th>Mobile</th>
+
+<td>{{ receipt.mobile }}</td>
+
+</tr>
+
+<tr>
+
+<th>Vehicle</th>
+
+<td>{{ receipt.vehicle }}</td>
+
+</tr>
+
+<tr>
+
+<th>Booking Date</th>
+
+<td>{{ receipt.booking_date }}</td>
+
+</tr>
+
+<tr>
+
+<th>Payment Method</th>
+
+<td>{{ receipt.payment_method }}</td>
+
+</tr>
+
+<tr>
+
+<th>Payment Status</th>
+
+<td style="color:green;">
+
+{{ receipt.payment_status }}
+
+</td>
+
+</tr>
+
+<tr>
+
+<th>Total Amount</th>
+
+<td>
+
+₹ {{ receipt.amount }}
+
+</td>
+
+</tr>
+
+</table>
+
+<br>
+
+<div style="text-align:center;">
+
+<button onclick="window.print()">
+
+🖨 Print Receipt
+
+</button>
+
+&nbsp;
+
+<a href="/" class="btn">
+
+Home
+
+</a>
+
+&nbsp;
+
+<a href="/bookings" class="btn">
+
+My Bookings
+
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 Vehicle Rental Booking System
+
+</p>
+
+</footer>
+
+</body>
+
+</html>

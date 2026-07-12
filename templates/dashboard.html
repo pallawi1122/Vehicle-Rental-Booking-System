@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>User Dashboard</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Vehicle Rental System</h1>
+
+<nav>
+
+<a href="/">Home</a>
+
+<a href="/bookings">My Bookings</a>
+
+<a href="/admin">Admin</a>
+
+<a href="/logout">Logout</a>
+
+</nav>
+
+</header>
+
+<section class="dashboard">
+
+<h2>Welcome, {{ username }} 👋</h2>
+
+<p>
+
+You have successfully logged in to the Vehicle Rental Booking System.
+
+</p>
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+
+<div class="flash-message">
+
+{{ messages[0] }}
+
+</div>
+
+{% endif %}
+{% endwith %}
+
+<div class="dashboard-box">
+
+<h3>Quick Actions</h3>
+
+<ul>
+
+<li>🚗 Book a Car</li>
+
+<li>🏍 Rent a Bike</li>
+
+<li>🛵 Rent a Scooter</li>
+
+<li>📋 View All Bookings</li>
+
+<li>✏ Update Booking</li>
+
+<li>❌ Cancel Booking</li>
+
+</ul>
+
+</div>
+
+<br>
+
+<a href="/" class="btn">
+
+Book Vehicle
+
+</a>
+
+&nbsp;&nbsp;
+
+<a href="/bookings" class="btn">
+
+View Bookings
+
+</a>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 Vehicle Rental Booking System
+
+</p>
+
+</footer>
+
+</body>
+
+</html>

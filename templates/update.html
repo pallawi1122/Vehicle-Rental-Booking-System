@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Update Booking</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Update Booking</h1>
+
+<nav>
+
+<a href="/">Home</a>
+
+<a href="/dashboard">Dashboard</a>
+
+<a href="/bookings">Bookings</a>
+
+<a href="/profile">Profile</a>
+
+<a href="/logout">Logout</a>
+
+</nav>
+
+</header>
+
+<section class="booking-form">
+
+<h2>Edit Booking Details</h2>
+
+<form action="/update/{{ booking.id }}" method="POST">
+
+<label>Customer Name</label>
+
+<input
+type="text"
+name="fullname"
+value="{{ booking.fullname }}"
+required>
+
+<label>Mobile Number</label>
+
+<input
+type="text"
+name="mobile"
+value="{{ booking.mobile }}"
+required>
+
+<label>Vehicle</label>
+
+<select name="vehicle">
+
+<option value="Car"
+{% if booking.vehicle=="Car" %}selected{% endif %}>
+Car
+</option>
+
+<option value="Bike"
+{% if booking.vehicle=="Bike" %}selected{% endif %}>
+Bike
+</option>
+
+<option value="Scooter"
+{% if booking.vehicle=="Scooter" %}selected{% endif %}>
+Scooter
+</option>
+
+</select>
+
+<label>Booking Date</label>
+
+<input
+type="date"
+name="booking_date"
+value="{{ booking.booking_date }}"
+required>
+
+<label>Status</label>
+
+<select name="status">
+
+<option value="Pending"
+{% if booking.status=="Pending" %}selected{% endif %}>
+Pending
+</option>
+
+<option value="Approved"
+{% if booking.status=="Approved" %}selected{% endif %}>
+Approved
+</option>
+
+<option value="Cancelled"
+{% if booking.status=="Cancelled" %}selected{% endif %}>
+Cancelled
+</option>
+
+</select>
+
+<br><br>
+
+<button type="submit">
+
+Update Booking
+
+</button>
+
+</form>
+
+<br>
+
+<div style="text-align:center;">
+
+<a href="/bookings" class="btn">
+
+Back to Bookings
+
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 Vehicle Rental Booking System
+
+</p>
+
+</footer>
+
+</body>
+
+</html>

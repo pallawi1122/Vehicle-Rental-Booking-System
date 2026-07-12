@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vehicle Rental Booking System</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+<h1>🚗 Vehicle Rental</h1>
+
+</div>
+
+<nav>
+
+<a href="/">Home</a>
+
+<a href="#vehicles">Vehicles</a>
+
+<a href="#booking">Book Now</a>
+
+<a href="/login">Login</a>
+
+<a href="/register">Register</a>
+
+<a href="/dashboard">Dashboard</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h2>Book Your Dream Vehicle Today</h2>
+
+<p>
+
+Choose from Cars, Bikes and Scooters at affordable prices.
+
+</p>
+
+<a href="#booking">
+
+<button>
+
+Book Now
+
+</button>
+
+</a>
+
+</div>
+
+</section>
+
+<section id="vehicles">
+
+<h2 class="title">
+
+Available Vehicles
+
+</h2>
+
+<div class="vehicle-container">
+
+<div class="card">
+
+<img src="{{ url_for('static', filename='images/car.png') }}" alt="Car">
+
+<h3>Luxury Car</h3>
+
+<p>
+
+Comfortable 5 Seater Car
+
+</p>
+
+<h4>
+
+₹2000 / Day
+
+</h4>
+
+<button>
+
+View Details
+
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="{{ url_for('static', filename='images/bike.png') }}" alt="Bike">
+
+<h3>Sports Bike</h3>
+
+<p>
+
+Powerful 220cc Bike
+
+</p>
+
+<h4>
+
+₹800 / Day
+
+</h4>
+
+<button>
+
+View Details
+
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="{{ url_for('static', filename='images/scooter.png') }}" alt="Scooter">
+
+<h3>City Scooter</h3>
+
+<p>
+
+Best for Daily Ride
+
+</p>
+
+<h4>
+
+₹500 / Day
+
+</h4>
+
+<button>
+
+View Details
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+<section id="booking">
+
+<h2 class="title">
+
+Book Your Vehicle
+
+</h2>
+
+<form action="/book" method="POST" class="booking-form">
+
+<input
+type="text"
+name="fullname"
+placeholder="Enter Full Name"
+required>
+
+<input
+type="text"
+name="mobile"
+placeholder="Enter Mobile Number"
+required>
+
+<input
+type="date"
+name="booking_date"
+required>
+
+<select
+name="vehicle"
+required>
+
+<option value="">Select Vehicle</option>
+
+<option value="Car">Luxury Car</option>
+
+<option value="Bike">Sports Bike</option>
+
+<option value="Scooter">City Scooter</option>
+
+</select>
+
+<button type="submit">
+
+Proceed to Payment
+
+</button>
+
+</form>
+
+</section>
+
+
+<section class="features">
+
+<h2 class="title">
+
+Why Choose Us?
+
+</h2>
+
+<div class="vehicle-container">
+
+<div class="card">
+
+<h3>💰 Affordable Prices</h3>
+
+<p>
+
+No hidden charges with transparent pricing.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>⚡ Instant Booking</h3>
+
+<p>
+
+Book your favourite vehicle in just a few clicks.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🛡 Trusted Service</h3>
+
+<p>
+
+Verified vehicles with secure payment options.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="contact">
+
+<h2 class="title">
+
+Contact Us
+
+</h2>
+
+<p>Email : support@vehiclerental.com</p>
+
+<p>Phone : +91 9876543210</p>
+
+<p>Location : Jamshedpur, Jharkhand</p>
+
+</section>
+
+
+<footer>
+
+<p>
+
+© 2026 Vehicle Rental Booking System
+
+</p>
+
+<p>
+
+Developed by <strong>Pallawi Prajapati</strong>
+
+</p>
+
+</footer>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
